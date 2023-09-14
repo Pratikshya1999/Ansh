@@ -1,8 +1,14 @@
 pipeline {
-        stage('SCM Checkout') {
-          git 'https://github.com/Pratikshya1999/Ansh'
+        agent any
+        tools {
+          maven 'maven'
         }
-        stage('Compile-Package') {
+        stages {
+          stage('SCM Checkout') {
+          git 'https://github.com/Pratikshya1999/Ansh'
+          }
+          stage('Compile-Package') {
           sh 'mvn package'
+          }
         }
 }

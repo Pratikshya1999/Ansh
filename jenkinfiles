@@ -1,0 +1,8 @@
+pipeline {
+        stage('SCM Checkout') {
+          git 'https://github.com/Pratikshya1999/Ansh'
+        }
+        stage('Compile-Package') {
+          sh 'mvn package'
+        }
+}

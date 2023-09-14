@@ -12,8 +12,10 @@ pipeline {
                   git 'https://github.com/Pratikshya1999/Ansh'
               }
           }
-          stage('Compile-Package') {
-          sh 'mvn package'
+          stage('Maven Build') {
+              steps {
+                  sh 'mvn package'
+              }
           }
         }
 }
